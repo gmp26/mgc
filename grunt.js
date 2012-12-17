@@ -1,9 +1,10 @@
-var testacular = require('testacular');
+//var testacular = require('testacular');
 
 /*global module:false*/
 module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-recess');
+	grunt.loadNpmTasks('grunt-testacular');
 
   // Project configuration.
   grunt.initConfig({
@@ -58,13 +59,33 @@ module.exports = function (grunt) {
     watch: {
       files: ['modules/**/*.js', 'common/**/*.js', 'templates/**/*.js'],
       tasks: 'build test'
-    }
+    },
+/*
+		testacular: {
+		  unit: {
+		    configFile: 'test/test-config.js',
+		    autoWatch: true,
+		    browsers: [ 'Chrome' ],
+		    reporters: [ 'dots' ],
+		    runnerPort: 9101
+		  }
+		},
+*/		
+		// to keep the server running
+		testacularServer: {
+		  unit: {
+		    options: {
+		      keepalive: true
+		    },
+		    configFile: 'test/test-config.js'
+		  }
+		}
   });
 
   // Default task.
   grunt.registerTask('default', 'build test');
 
-  grunt.registerTask('build', 'build all or some of the angular-ui modules', function () {
+  grunt.registerTask('build', 'build all or some of the mgc modules', function () {
 
     var jsBuildFiles = grunt.config('concat.build.src');
     var lessBuildFiles = [];
@@ -92,11 +113,18 @@ module.exports = function (grunt) {
     grunt.task.run('concat min recess:build recess:min');
   });
 
+/*
   grunt.registerTask('server', 'start testacular server', function () {
     //Mark the task as async but never call done, so the server stays up
     var done = this.async();
     testacular.server.start({ configFile: 'test/test-config.js'});
   });
+*/
+
+	grunt.registerTask('server', 'run unit tests', function() {
+	//	var done = this.async();
+		grunt.task.run('testacularServer');
+	});
 
   grunt.registerTask('test', 'run tests (make sure server task is run first)', function () {
     var done = this.async();
@@ -118,4 +146,5 @@ module.exports = function (grunt) {
       }
     });
   });
+
 };

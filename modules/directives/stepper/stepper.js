@@ -1,5 +1,5 @@
-angular.module('ui.directives').directive('mgcStepper', ['ui.config', function(uiConfig) {
-	var options = uiConfig.mgcStepper || {};
+angular.module('mgc.directives').directive('mgcStepper', ['mgc.config', function(mgcConfig) {
+	var options = mgcConfig.mgcStepper || {};
 	return {
 		restrict: 'A',
 		// supports using directive as an attribute, with options as the attribute value
@@ -30,9 +30,3 @@ angular.module('ui.directives').directive('mgcStepper', ['ui.config', function(u
 	};
 }]);
 
-
-angular.module('ui.filters').filter('filterTmpl', ['ui.config', function (uiConfig) {
-  return function (value) {
-    return value;
-  };
-}]);

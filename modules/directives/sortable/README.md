@@ -1,6 +1,6 @@
-# ui-sortable directive
+# mgc-sortable directive
 
-This directive allows you to sort array with drag & drop.
+This directive allows you to sort arrays with drag & drop.
 
 ## Requirements
 
@@ -9,18 +9,18 @@ This directive allows you to sort array with drag & drop.
 
 ## Usage
 
-Load the script file: sortable.js in your application (or load in angular-ui which includes it)
+Load the script file: sortable.js in your application (or load in mgc which includes it)
 
 		<script type="text/javascript" src="modules/directives/sortable/src/sortable.js"></script>
 
 Add the sortable module as a dependency to your application module:
 
-		var myAppModule = angular.module('MyApp', ['ui.directives.sortable'])
+		var myAppModule = angular.module('MyApp', ['mgc.directives.sortable'])
 
 
 Apply the directive to your form elements:
 
-		<ul ui-sortable ng-model="items">
+		<ul mgc-sortable ng-model="items">
 		  <li ng-repeat="item in items">{{ item }}</li>
 		</ul>
 
@@ -32,13 +32,13 @@ All the [jQueryUI Sortable options](http://api.jqueryui.com/sortable/) can be pa
 		  $scope.items = ["One", "Two", "Three"];
 
 		  $scope.sortableOptions = {
-		    update: function(e, ui) { ... },
+		    update: function(e, mgc) { ... },
 		    axis: 'x'
 		  };
 		});
 
 
-		<ul ui-sortable="sortableOptions" ng-model="items">
+		<ul mgc-sortable="sortableOptions" ng-model="items">
 		  <li ng-repeat="item in items">{{ item }}</li>
 		</ul>
 

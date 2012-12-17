@@ -1,12 +1,10 @@
-app.directive('mgcEval', function(funcGen) {
+angular.module('mgc.directives').directive('mgcEval', ['mgc.funcGen', function(funcGen) {
 	var fg = funcGen;
 
   return {
     restrict: 'C', // the directive can be invoked only by using  mgc-eval="" in the template
     scope: true,	
     link: function (scope, element, attrs) {
-	    // initialization, done once per my-directive tag in template. If my-directive is within an
-	    // ng-repeat-ed template then it will be called every time ngRepeat creates a new copy of the template.
 
 			var f = fg.define(attrs.f);
 			
@@ -21,4 +19,4 @@ app.directive('mgcEval', function(funcGen) {
 	    });
 	  }
   };
-});
+}]);

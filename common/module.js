@@ -1,5 +1,5 @@
-
-angular.module('ui.config', []).value('ui.config', {});
-angular.module('ui.filters', ['ui.config']);
-angular.module('ui.directives', ['ui.config']);
-angular.module('ui', ['ui.filters', 'ui.directives', 'ui.config']);
+angular.module('mgc.config', []).value('mgc.config', {});
+angular.module('mgc.filters', ['mgc.config']);
+angular.module('mgc.directives', ['mgc.config']);
+angular.module('mgc.services', ['mgc.config']);
+angular.module('mgc', ['mgc.filters', 'mgc.directives', 'mgc.services', 'mgc.config']);
