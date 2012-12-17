@@ -1,4 +1,3 @@
-
 describe('mgcAdjustable', function () {
 
   // declare these up here to be global to all tests
