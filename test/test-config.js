@@ -19,6 +19,8 @@ files = [
   'common/module.js',
   'modules/*/*/*.js',
   'modules/*/*/test/*.js',
+	'locals/*.js',
+	'locals/*/test/*.js',
   'templates/*.js',
   'templates/test/*.js'
 ];

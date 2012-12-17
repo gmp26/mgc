@@ -57,20 +57,10 @@ module.exports = function (grunt) {
       files: ['grunt.js', 'common/**/*.js', 'modules/**/*.js']
     },
     watch: {
-      files: ['modules/**/*.js', 'common/**/*.js', 'templates/**/*.js'],
+      files: ['modules/**/*.js', 'common/**/*.js', 'templates/**/*.js', 'locals/*.js'],
       tasks: 'build test'
     },
-/*
-		testacular: {
-		  unit: {
-		    configFile: 'test/test-config.js',
-		    autoWatch: true,
-		    browsers: [ 'Chrome' ],
-		    reporters: [ 'dots' ],
-		    runnerPort: 9101
-		  }
-		},
-*/		
+
 		// to keep the server running
 		testacularServer: {
 		  unit: {
@@ -113,16 +103,8 @@ module.exports = function (grunt) {
     grunt.task.run('concat min recess:build recess:min');
   });
 
-/*
-  grunt.registerTask('server', 'start testacular server', function () {
-    //Mark the task as async but never call done, so the server stays up
-    var done = this.async();
-    testacular.server.start({ configFile: 'test/test-config.js'});
-  });
-*/
 
 	grunt.registerTask('server', 'run unit tests', function() {
-	//	var done = this.async();
 		grunt.task.run('testacularServer');
 	});
 

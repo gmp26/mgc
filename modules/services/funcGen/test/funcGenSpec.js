@@ -5,13 +5,12 @@ describe('funcGenSpec', function() {
     var fg;
 
     beforeEach(function() {
-
         inject(function($injector) {
             fg = $injector.get('funcGen');
         });
     });
 
-    it('should make polynomials', function() {
+    iit('should make polynomials', function() {
 				expect(fg.poly(1,2,3)(1)).toBe(6);
 				expect(fg.poly(1,2,3)(2)).toBe(11);
 				expect(fg.poly(1,2,3,4)(1)).toBe(10);

@@ -133,10 +133,10 @@ angular.module('mgc.directives').directive('mgcStepper', ['mgc.config', function
 }]);
 
 
-angular.module('mgc.services', [], function($provide) {
+angular.module('mgc.services', ['mgc.config'], function($provide) {
     $provide.factory('funcGen', function() {
 
-			var poly = 	function() {
+			var poly = function() {
 					var args = Array.prototype.slice.call(arguments);
 					return function(x) {
 						return args.reduce(function(y0, y1) {
