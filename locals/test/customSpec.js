@@ -11,7 +11,7 @@ describe('customSpec', function() {
         });
     });
 
-    iit('should have defined the path to "modules.js"', function() {
+    it('should have defined the path to "modules.js"', function() {
 			expect(config.path).toMatch(/locals/);
     });
 });

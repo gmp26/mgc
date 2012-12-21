@@ -1,6 +1,6 @@
 /**
  * MGC - Maths Education DSL in AngularJS
- * @version v0.1.0 - 2012-12-17
+ * @version v0.1.0 - 2012-12-21
  * @link https://github.com/gmp26/mgc
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */

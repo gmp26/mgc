@@ -20,7 +20,7 @@ files = [
   'modules/*/*/*.js',
   'modules/*/*/test/*.js',
 	'locals/*.js',
-	'locals/*/test/*.js',
+	'locals/test/*.js',
   'templates/*.js',
   'templates/test/*.js'
 ];
